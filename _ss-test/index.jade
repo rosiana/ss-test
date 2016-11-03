@@ -36,7 +36,7 @@ html
         .progress
          .progress-bar
         a.bs-wizard-dot(href='#step-1')
-       .col-xs-6.bs-wizard-step.disabled
+       .col-xs-3.bs-wizard-step.disabled
         .text-center.bs-wizard-steptitle Pilih Barang
         .progress
          .progress-bar
@@ -46,6 +46,11 @@ html
         .progress
          .progress-bar
         a.bs-wizard-dot(href='#step-3')
+       .col-xs-3.bs-wizard-step.disabled
+        .text-center.bs-wizard-steptitle Done!
+        .progress
+         .progress-bar
+        a.bs-wizard-dot(href='#step-4')
   .container
    .row
      .col-xs-12.col-sm-12.col-md-6.col-md-offset-3
@@ -67,7 +72,7 @@ html
             .form-group
              input.form-control(maxlength='100', type='text', placeholder='No. HP Sista')
             p.required * wajib diisi
-            button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Lanjut
+            button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button', style='margin-bottom: 0 !important;') Lanjut
          #step-2.row.setup-content
           .col-xs-12
            .col-md-12
@@ -150,22 +155,39 @@ html
                      input#imgInp(type='file')
                    //input.form-control(type='text', readonly='')
             hr 
-            .btn-group
-             button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Lanjut          
+            .btn-group.step2-btn
+             button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button' style="margin-right: -10px !important;") Lanjut          
              button.btn.btn-primary.prevBtn.btn-lg.pull-right(type='button') Kembali
          #step-3.row.setup-content
           .col-xs-12
            .col-md-12
-             .row
-              .col-md-8.misc-col
-               .form-group
-                input.form-control(maxlength='100', type='text', placeholder='Biaya Kirim Balik')
-               .form-group
-                textarea.form-control(rows='5', placeholder='Keterangan')
-              .col-md-4
-               .kv-avatar-errors-2.center-block(style='width:800px;display:none')
-               form.text-center(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
-                .kv-avatar.center-block(style='width:140px')
-                input.avatar-2.file-loading(name='avatar-3', type='file')
+            .row
+             .col-xs-7.col-sm-8.good-exp
+              .form-group
+               input.form-control(maxlength='100', type='text', placeholder='Biaya Kirim Balik')
+              .form-group
+               textarea.form-control(rows='3', placeholder='Keterangan')
+             .col-xs-5.col-sm-4
+               .form-group.good-ongkir
+                .good-title(style="margin-top: -2px; text-align: left;") Foto bukti
+                img#img-upload
+                .input-group
+                 span.input-group-btn
+                  span.btn.btn-default.btn-file.order-button.btn-block(style="margin-top: -5px !important;")
+                   | Upload
+                   input#imgInp(type='file')
+                 //input.form-control(type='text', readonly='')
             .btn-group
-             button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Kirim
+             button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button', style="margin-right:-10px;") Kirim
+             button.btn.btn-primary.prevBtn.btn-lg.pull-right(type='button') Kembali
+         #step-4.row.setup-content
+          .col-xs-12
+           h5
+            | Terima kasih, laporan pengembalian barang Sista sudah kami terima.
+            br
+            i Cashback 
+            |akan Soraya berikan dalam bentuk 
+            i voucher 
+            | belanja ke email Sista. :)
+           .btn-group
+            button.btn.btn-primary.done-btn.btn-lg.btn-block(type='button') Belanja lagi yuk, Sis!

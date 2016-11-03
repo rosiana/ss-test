@@ -2,7 +2,8 @@ $(document).ready(function () {
 
     var navListItems = $('.bs-wizard-dot'),
             allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
+            allNextBtn = $('.nextBtn'),
+            allPrevBtn = $('.prevBtn');
 
     allWells.hide();
 
@@ -48,6 +49,18 @@ $(document).ready(function () {
             nextStepWizard.removeClass('disabled').addClass('active');
             nextStepWizard.children('.bs-wizard-dot').trigger('click');
         }
+    });
+
+    allPrevBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            curWizard = $('.bs-wizard-dot[href=\'#' + curStepBtn + '\']').parent(),
+            prevStepWizard = $('.bs-wizard-dot[href=\'#' + curStepBtn + '\']').parent().prev(),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        prevStepWizard.removeClass('complete').addClass('active');
+        prevStepWizard.children('.bs-wizard-dot').trigger('click');
     });
 
     $('.active .bs-wizard-dot').trigger('click');
