@@ -21,7 +21,10 @@ $(document).ready(function () {
             $item.addClass('active');
             allWells.hide();
             $target.show();
-            if ($target.is($('#step-2'))) {
+            if ($target.is($('#step-1'))) {
+                $('.panel-subtitle').text('Isi data Sista dulu ya');
+            }
+            else if ($target.is($('#step-2'))) {
                 $('.panel-subtitle').text('Silakan pilih barang yang ingin Sista kembalikan');
             }
             else if ($target.is($('#step-3'))) {
@@ -32,8 +35,9 @@ $(document).ready(function () {
                 $('.panel-body').css('background-color','white');
             }
             $target.find('input:eq(0)').focus();
-            //$dot = $('.bs-wizard-dot[href=\'' + $(this).attr('href') + '\']');
-            //$dot.css({"width": "35px", "height": "35px"});
+            $dot = $('.bs-wizard-dot[href=\'' + $(this).attr('href') + '\']');
+            $dot.css({"width": "35px", "height": "35px", "top":"40px"});
+            $dot.toggleClass('change');
         };
     });
 
