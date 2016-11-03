@@ -32,6 +32,8 @@ $(document).ready(function () {
                 $('.panel-body').css('background-color','white');
             }
             $target.find('input:eq(0)').focus();
+            //$dot = $('.bs-wizard-dot[href=\'' + $(this).attr('href') + '\']');
+            //$dot.css({"width": "35px", "height": "35px"});
         };
     });
 
