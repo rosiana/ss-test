@@ -224,25 +224,13 @@ input:focus {
   font-size: 12px;
 }
 
-.order-input {
-  width: 84% !important;
-  display: inline !important;
-  float: left !important;
-}
-
 .order-button {
-  display: inline !important;
-}
-
-.order-button button {
-  padding-left: 25px !important;
-  padding-right: 25px !important;
   box-shadow: none !important;
   border: none !important;
   border-radius: 0 !important;
   background-color: #d93b3d !important;
   height: 34px;
-  color: #fff;
+  color: #fff !important;
 }
 
 .order-group {
@@ -250,11 +238,16 @@ input:focus {
   width: 100% !important;
 }
 
-.nextBtn {
+.nextBtn,
+.prevBtn {
   box-shadow: none !important;
   border: none !important;
   border-radius: 0 !important;
   background-color: #d93b3d !important;
+}
+
+.prevBtn {
+  margin-right: 10px;
 }
 
 .good-entry {
@@ -263,7 +256,6 @@ input:focus {
 }
 
 .check {
-  margin-left: 5px !important;
   margin-top: -7px !important;
 }
 
@@ -314,6 +306,20 @@ input:focus {
 
 }
 
+.btn-group {
+  padding: 10px;
+  float: right;
+}
+
+.row.no-pad {
+  margin-right:0;
+  margin-left:0;
+}
+.row.no-pad > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
+
 @media (max-width: 768px){
   .navbar-left{
     float: left;
@@ -339,5 +345,8 @@ input:focus {
   .panel {
     margin-left: -15px !important;
     margin-right: -15px !important;
+  }
+  .order-button {
+    text-align: center;
   }
 }

@@ -35,20 +35,25 @@ html
     .col-xs-12.col-sm-12.col-md-6.col-md-offset-3
      .row.bs-wizard(style='border-bottom:0;')
        .col-xs-3.bs-wizard-step.active
-        .text-center.bs-wizard-steptitle Data Order
+        .text-center.bs-wizard-steptitle Data Sista
         .progress
          .progress-bar
         a.bs-wizard-dot(href='#step-1')
-       .col-xs-6.bs-wizard-step.disabled
-        .text-center.bs-wizard-steptitle Detil Order
+       .col-xs-3.bs-wizard-step.disabled
+        .text-center.bs-wizard-steptitle Pilih Barang
         .progress
          .progress-bar
         a.bs-wizard-dot(href='#step-2')
        .col-xs-3.bs-wizard-step.disabled
-        .text-center.bs-wizard-steptitle Konfirmasi
+        .text-center.bs-wizard-steptitle Data Retur
         .progress
          .progress-bar
         a.bs-wizard-dot(href='#step-3')
+       .col-xs-3.bs-wizard-step.disabled
+        .text-center.bs-wizard-steptitle Konfirmasi
+        .progress
+         .progress-bar
+        a.bs-wizard-dot(href='#step-4')
   .container
    .row
      .col-xs-12.col-sm-12.col-md-6.col-md-offset-3
@@ -75,70 +80,82 @@ html
           .col-xs-12
            .col-md-12
             .form-group.order-group
-             input.order-input.form-control(maxlength='100', type='text', required='required', placeholder='Nomor Order *')
-             span.input-group-btn.order-button
-              button.btn.btn-default(type='button') Load
+             .row.no-pad
+              .col-xs-9.col-md-10
+               input.order-input.form-control.container-fluid(maxlength='100', type='text', required='required', placeholder='Nomor Order *')
+              .col-xs-3.col-md-2           
+               span.input-group-btn
+                button.btn.btn-default.order-button.btn-block(type='button') Load
            .col-md-12
             h4 
              | Pilih barang yang akan dikembalikan
             hr
-            .row.good-entry
-             .col-md-1
+            .row.good-entry.no-pad
+             .col-xs-1.col-sm-1
               .checkbox
                input.check(type='checkbox', value='')
-             .col-md-7.good-info
-              ul
-               li
-                .good-title Nama Item
-                p Kiraniar Plain Casual Cardigan
-               li
-                .good-title SKU
-                p RP-3994-ARL-4595
-               li
-                .good-title Harga Satuan
-                p 193000
-             .col-md-4.good-more
-              .form-group
-               .good-title Alasan Retur
-               select#sel1.form-control
-                option Bolong
-                option Jahitan tidak rapi
-                option Kebesaran
-                option Kekecilan
-               .kv-avatar-errors-2.center-block(style='width:800px;display:none')
-               form.text-center(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
-                .kv-avatar.center-block(style='width:140px')
-                input.avatar-2.file-loading(name='avatar-2', type='file')
+             .col-xs-11.col-sm-11
+              .row
+               .col-sm-8.good-info
+                ul
+                 li
+                  .good-title Nama Item
+                  p Kiraniar Plain Casual Cardigan
+                 li
+                  .good-title SKU
+                  p RP-3994-ARL-4595
+                 li
+                  .good-title Harga Satuan
+                  p 193000
+               .col-sm-4.good-more
+                .form-group
+                 .good-title Alasan Retur
+                 select#sel1.form-control
+                  option Bolong
+                  option Jahitan tidak rapi
+                  option Kebesaran
+                  option Kekecilan
+                 .kv-avatar-errors-2.center-block(style='width:800px;display:none')
+                 form.text-center(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
+                  .kv-avatar.center-block(style='width:140px')
+                  input.avatar-2.file-loading(name='avatar-2', type='file')
             hr.good-hr
-            .row.good-entry
-             .col-md-1
+            .row.good-entry.no-pad
+             .col-xs-1.col-sm-1
               .checkbox
                input.check(type='checkbox', value='')
-             .col-md-7.good-info
-              ul
-               li
-                .good-title Nama Item
-                p Kiraniar Plain Casual Cardigan
-               li
-                .good-title SKU
-                p RP-3994-ARL-4595
-               li
-                .good-title Harga Satuan
-                p 193000
-             .col-md-4.good-more
-              .form-group
-               .good-title Alasan Retur
-               select#sel1.form-control
-                option Bolong
-                option Jahitan tidak rapi
-                option Kebesaran
-                option Kekecilan
-               .kv-avatar-errors-2.center-block(style='width:800px;display:none')
-               form.text-center(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
-                .kv-avatar.center-block(style='width:140px')
-                input.avatar-2.file-loading(name='avatar-2', type='file')
-            hr
-            .col-md-12
+             .col-xs-11.col-sm-11
+              .row
+               .col-sm-8.good-info
+                ul
+                 li
+                  .good-title Nama Item
+                  p Kiraniar Plain Casual Cardigan Kiraniar Plain Casual Cardigan
+                 li
+                  .good-title SKU
+                  p RP-3994-ARL-4595
+                 li
+                  .good-title Harga Satuan
+                  p 193000
+               .col-sm-4.good-more
+                .form-group
+                 .good-title Alasan Retur
+                 select#sel1.form-control
+                  option Bolong
+                  option Jahitan tidak rapi
+                  option Kebesaran
+                  option Kekecilan
+                 .kv-avatar-errors-2.center-block(style='width:800px;display:none')
+                 form.text-center(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
+                  .kv-avatar.center-block(style='width:140px')
+                  input.avatar-2.file-loading(name='avatar-2', type='file')
+            hr 
+            .btn-group
+             button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Lanjut          
+             button.btn.btn-primary.prevBtn.btn-lg.pull-right(type='button') Kembali
+         #step-3.row.setup-content
+          .col-xs-12
+           .col-md-12
              .row
               .col-md-8.misc-col
                .form-group
@@ -150,8 +167,8 @@ html
                form.text-center(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
                 .kv-avatar.center-block(style='width:140px')
                 input.avatar-2.file-loading(name='avatar-3', type='file')
-            button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Lanjut
-         #step-3.row.setup-content
-          .col-xs-12
-           .col-md-12
-            button.btn.btn-success.btn-lg.pull-right(type='submit') Finish!
+            .btn-group
+             button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Lanjut          
+             button.btn.btn-primary.prevBtn.btn-lg.pull-right(type='button') Kembali
+         #step-4.row.setup-content
+            button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Kirim
