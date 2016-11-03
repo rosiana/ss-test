@@ -52,38 +52,64 @@ $(document).ready(function () {
 
     $('.active .bs-wizard-dot').trigger('click');
 
-    var btnCust = '<button type="button" class="btn btn-default" title="Add picture tags" ' + 
-        'onclick="alert(\'Call your custom code here.\')">' +
-        '<i class="glyphicon glyphicon-tag"></i>' +
-        '</button>'; 
-    $(".avatar-2").fileinput({
-        overwriteInitial: true,
-        maxFileSize: 1500,
-        showClose: true,
-        showCaption: false,
-        showBrowse: false,
-        browseOnZoneClick: true,
-        removeLabel: '',
-        removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
-        elErrorContainer: '.kv-avatar-errors-2',
-        msgErrorClass: 'alert alert-block alert-danger',
-        defaultPreviewContent: '<img src="assets/img/upload.png" alt="Your Avatar" style="width:140px">',
-        layoutTemplates: {main2: '{preview}'},
-        allowedFileExtensions: ["jpg", "png", "gif"]
-    });
-    $(".avatar-3").fileinput({
-        overwriteInitial: true,
-        maxFileSize: 1500,
-        showClose: true,
-        showCaption: false,
-        showBrowse: false,
-        browseOnZoneClick: true,
-        removeLabel: '',
-        removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
-        elErrorContainer: '.kv-avatar-errors-2',
-        msgErrorClass: 'alert alert-block alert-danger',
-        defaultPreviewContent: '<img src="assets/img/upload2.png" alt="Your Avatar" style="width:140px">',
-        layoutTemplates: {main2: '{preview}'},
-        allowedFileExtensions: ["jpg", "png", "gif"]
-    });
+    $(document).on('change', '.btn-file :file', function() {
+        var input = $(this),
+            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [label]);
+        });
+
+        $('.btn-file :file').on('fileselect', function(event, label) {
+            
+            var input = $(this).parents('.input-group').find(':text'),
+                log = label;
+            
+            if( input.length ) {
+                input.val(log);
+            } else {
+            }
+        
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    $('#img-upload').attr('src', e.target.result);
+                }
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function(){
+            readURL(this);
+        }); 
+
+        var toValidate = $('.name-input');
+        toValidate.keyup(function() {            
+            if($(this).val().length > 0) {
+                $('.nextBtn').removeClass('disabled');
+            }
+            else {
+                $('.nextBtn').addClass('disabled');
+            }
+        });
+
+        toValidate = $('.order-input');
+        toValidate.keyup(function() {            
+            if($(this).val().length > 0) {
+                $('.order-button').removeClass('disabled');
+                $('.nextBtn').removeClass('disabled');
+            }
+            else {
+                $('.order-button').addClass('disabled');
+                $('.nextBtn').addClass('disabled');
+            }
+        });
+
+        $('.goods').hide();
+
+        $('.order-button').click(function() {
+            $('.goods').show();
+        });
 });
