@@ -325,7 +325,7 @@ input:focus {
 .btn-file {
     position: relative;
     overflow: hidden;
-    margin-top: 10px;
+    margin-top: -5px !important;
     margin-left: 0 !important;
     white-space: normal;
 }
@@ -347,6 +347,7 @@ input:focus {
 
 #img-upload{
     width: 100%;
+    margin-top: 10px;
 }
 
 .row.no-pad {
@@ -356,6 +357,10 @@ input:focus {
 .row.no-pad > [class*='col-'] {
   padding-right:0;
   padding-left:0;
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 @media (max-width: 768px){

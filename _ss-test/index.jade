@@ -61,7 +61,7 @@ html
           .col-xs-12
            .col-md-12
             .form-group
-             input.form-control.name-input.disabled(maxlength='100', type='text', required='required', placeholder='Nama Sista *')
+             input.form-control.name-input(maxlength='100', type='text', required='required', placeholder='Nama Sista *')
             .form-group
              input.form-control(maxlength='100', type='text', placeholder='Email Sista')
             .form-group
@@ -84,8 +84,7 @@ html
             hr
             .row.good-entry.no-pad
              .col-xs-1.col-sm-1
-              .checkbox
-               input.check(type='checkbox', value='')
+              input.check(type='checkbox')
              .col-xs-11.col-sm-11
               .row
                .col-xs-6.col-sm-8.good-info
@@ -109,18 +108,17 @@ html
                   option Kekecilan
                  .form-group
                   .good-title.photo-title Foto bukti
+                  img#img-upload
                   .input-group
                    span.input-group-btn
                     span.btn.btn-default.btn-file.btn-block
                      | Upload
                      input#imgInp(type='file')
                    //input.form-control(type='text', readonly='')
-                  img#img-upload
             hr.good-hr
             .row.good-entry.no-pad
              .col-xs-1.col-sm-1
-              .checkbox
-               input.check(type='checkbox', value='')
+              input.check(type='checkbox')
              .col-xs-11.col-sm-11
               .row
                .col-xs-6.col-sm-8.good-info
@@ -144,13 +142,13 @@ html
                   option Kekecilan
                  .form-group
                   .good-title.photo-title Foto bukti
+                  img#img-upload
                   .input-group
                    span.input-group-btn
                     span.btn.btn-default.btn-file.order-button.btn-block
                      | Upload
                      input#imgInp(type='file')
                    //input.form-control(type='text', readonly='')
-                  img#img-upload
             hr 
             .btn-group
              button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Lanjut          
