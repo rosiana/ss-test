@@ -1,2 +1,157 @@
-h1 Welcome to Harp.
-h3 This is yours to own. Enjoy.
+html
+ head
+  link(rel='stylesheet', href='assets/bootstrap/css/bootstrap.min.css')
+  link(rel='stylesheet', href='assets/bootstrap/css/bootstrap-responsive.min.css')
+  link(rel='stylesheet', href='assets/font-awesome/css/font-awesome.min.css')
+  link(rel='stylesheet', media='all', type='text/css', href='assets/file-input/css/fileinput.min.css')
+  link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+  script(src='assets/bootstrap/js/bootstrap.min.js')
+  script(src='assets/file-input/js/fileinput.min.js')
+  script(src='main.js')
+ body 
+  nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+   .container
+    .row
+     .col-xs-12.col-sm-12.col-md-6.col-md-offset-3
+      .row
+       .col-xs-6.col-sm-6
+        .nav.navbar-nav.navbar-left
+         a(href='#')
+          img(src='assets/img/logo.png' style='height: 100%, width: auto')
+       .col-xs-6.col-sm-6
+        ul.nav.navbar-nav.navbar-right
+         li.menus
+          a(href='#')
+           i.fa.fa-search
+         li.menus
+          a(href='#')
+           i.fa.fa-heart
+         li.menus
+          a(href='#')
+           i.fa.fa-shopping-cart
+  .container
+   .row.row-wiz
+    .col-xs-12.col-sm-12.col-md-6.col-md-offset-3
+     .row.bs-wizard(style='border-bottom:0;')
+       .col-xs-3.bs-wizard-step.active
+        .text-center.bs-wizard-steptitle Data Order
+        .progress
+         .progress-bar
+        a.bs-wizard-dot(href='#step-1')
+       .col-xs-6.bs-wizard-step.disabled
+        .text-center.bs-wizard-steptitle Detil Order
+        .progress
+         .progress-bar
+        a.bs-wizard-dot(href='#step-2')
+       .col-xs-3.bs-wizard-step.disabled
+        .text-center.bs-wizard-steptitle Konfirmasi
+        .progress
+         .progress-bar
+        a.bs-wizard-dot(href='#step-3')
+  .container
+   .row
+     .col-xs-12.col-sm-12.col-md-6.col-md-offset-3
+      .panel.panel-default
+       .panel-heading
+        h3.panel-title
+         | Pengembalian Barang
+        p.panel-subtitle
+         | Isi data Sista dulu ya
+       .panel-body
+        form(role='form')
+         #step-1.row.setup-content
+          .col-xs-12
+           .col-md-12
+            .form-group
+             input.form-control(maxlength='100', type='text', required='required', placeholder='Nama Sista *')
+            .form-group
+             input.form-control(maxlength='100', type='text', placeholder='Email Sista')
+            .form-group
+             input.form-control(maxlength='100', type='text', placeholder='No. HP Sista')
+            p.required * wajib diisi
+            button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Lanjut
+         #step-2.row.setup-content
+          .col-xs-12
+           .col-md-12
+            .form-group.order-group
+             input.order-input.form-control(maxlength='100', type='text', required='required', placeholder='Nomor Order *')
+             span.input-group-btn.order-button
+              button.btn.btn-default(type='button') Load
+           .col-md-12
+            h4 
+             | Pilih barang yang akan dikembalikan
+            hr
+            .row.good-entry
+             .col-md-1
+              .checkbox
+               input.check(type='checkbox', value='')
+             .col-md-7.good-info
+              ul
+               li
+                .good-title Nama Item
+                p Kiraniar Plain Casual Cardigan
+               li
+                .good-title SKU
+                p RP-3994-ARL-4595
+               li
+                .good-title Harga Satuan
+                p 193000
+             .col-md-4.good-more
+              .form-group
+               .good-title Alasan Retur
+               select#sel1.form-control
+                option Bolong
+                option Jahitan tidak rapi
+                option Kebesaran
+                option Kekecilan
+               .kv-avatar-errors-2.center-block(style='width:800px;display:none')
+               form.text-center(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
+                .kv-avatar.center-block(style='width:140px')
+                input.avatar-2.file-loading(name='avatar-2', type='file')
+            hr.good-hr
+            .row.good-entry
+             .col-md-1
+              .checkbox
+               input.check(type='checkbox', value='')
+             .col-md-7.good-info
+              ul
+               li
+                .good-title Nama Item
+                p Kiraniar Plain Casual Cardigan
+               li
+                .good-title SKU
+                p RP-3994-ARL-4595
+               li
+                .good-title Harga Satuan
+                p 193000
+             .col-md-4.good-more
+              .form-group
+               .good-title Alasan Retur
+               select#sel1.form-control
+                option Bolong
+                option Jahitan tidak rapi
+                option Kebesaran
+                option Kekecilan
+               .kv-avatar-errors-2.center-block(style='width:800px;display:none')
+               form.text-center(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
+                .kv-avatar.center-block(style='width:140px')
+                input.avatar-2.file-loading(name='avatar-2', type='file')
+            hr
+            .col-md-12
+             .row
+              .col-md-8.misc-col
+               .form-group
+                input.form-control(maxlength='100', type='text', placeholder='Biaya Kirim Balik')
+               .form-group
+                textarea.form-control(rows='5', placeholder='Keterangan')
+              .col-md-4
+               .kv-avatar-errors-2.center-block(style='width:800px;display:none')
+               form.text-center(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
+                .kv-avatar.center-block(style='width:140px')
+                input.avatar-2.file-loading(name='avatar-3', type='file')
+            button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button') Lanjut
+         #step-3.row.setup-content
+          .col-xs-12
+           .col-md-12
+            button.btn.btn-success.btn-lg.pull-right(type='submit') Finish!
