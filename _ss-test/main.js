@@ -2,7 +2,8 @@ $(document).ready(function () {
 
     var navListItems = $('.bs-wizard-dot'),
             allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
+            allNextBtn = $('.nextBtn'),
+            allPrevBtn = $('.prevBtn');
 
     allWells.hide();
 
@@ -20,11 +21,18 @@ $(document).ready(function () {
             $item.addClass('active');
             allWells.hide();
             $target.show();
-            if ($target == $('#step-2')) {
-                $('.panel-subtitle').text('Silakan lengkapi data order Sista');
+            if ($target.is($('#step-2'))) {
+                $('.panel-subtitle').text('Silakan pilih barang yang ingin Sista kembalikan');
+            }
+            else if ($target.is($('#step-3'))) {
+                $('.panel-subtitle').text('Silakan lengkapi data pengembalian barang');
+            }
+            else if ($target.is($('#step-4'))) {
+                $('.panel-subtitle').text('Done!');
+                $('.panel-body').css('background-color','white');
             }
             $target.find('input:eq(0)').focus();
-        }
+        };
     });
 
     allNextBtn.click(function(){
@@ -47,7 +55,21 @@ $(document).ready(function () {
             curWizard.removeClass('active').addClass('complete');
             nextStepWizard.removeClass('disabled').addClass('active');
             nextStepWizard.children('.bs-wizard-dot').trigger('click');
+            nextStepWizard.children('.bs-wizard-dot').trigger('mouseover');
         }
+    });
+
+    allPrevBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            curWizard = $('.bs-wizard-dot[href=\'#' + curStepBtn + '\']').parent(),
+            prevStepWizard = $('.bs-wizard-dot[href=\'#' + curStepBtn + '\']').parent().prev(),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+
+            prevStepWizard.children('.bs-wizard-dot').trigger('click');
+            prevStepWizard.children('.bs-wizard-dot').trigger('mouseover');
     });
 
     $('.active .bs-wizard-dot').trigger('click');
@@ -83,7 +105,7 @@ $(document).ready(function () {
 
         $("#imgInp").change(function(){
             readURL(this);
-        }); 
+        });  
 
         var toValidate = $('.name-input');
         toValidate.keyup(function() {            
@@ -112,4 +134,16 @@ $(document).ready(function () {
         $('.order-button').click(function() {
             $('.goods').show();
         });
+
+        function checkCheck() {         
+
+            if ($('#check1').prop("checked") == true || $('#check2').prop("checked") == true) {
+                console.log("nyo");
+                $('.nextBtn').removeClass('disabled');
+            }
+            else {
+                $('.nextBtn').addClass('disabled');
+            }
+        };
+        checkCheck();
 });
