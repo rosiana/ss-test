@@ -73,7 +73,7 @@ html
             .form-group
              input.form-control(maxlength='100', type='text', placeholder='No. HP Sista')
             p.required * wajib diisi
-            button.btn.btn-primary.nextBtn.btn-lg.pull-right(type='button', style='margin-bottom: 0 !important;') Lanjut
+            button.btn.btn-primary.nextBtn.step1-button.btn-lg.pull-right.disabled(type='button', style='margin-bottom: 0 !important;') Lanjut
          #step-2.row.setup-content
           .col-xs-12
            .col-md-12
@@ -91,7 +91,7 @@ html
             .row.good-entry.no-pad
              .col-xs-1.col-sm-1
               .checkbox
-               input(type='checkbox', value="", id="check1")
+               input#check1(type='checkbox', value="")
                label
              .col-xs-11.col-sm-11
               .row
@@ -127,7 +127,7 @@ html
             .row.good-entry.no-pad
              .col-xs-1.col-sm-1
               .checkbox
-               input(type='checkbox', value="", id="check2")
+               input#check2(type='checkbox', value="")
                label
              .col-xs-11.col-sm-11
               .row
@@ -161,7 +161,7 @@ html
                    //input.form-control(type='text', readonly='')
             hr 
             .btn-group.step2-btn
-             button.btn.btn-primary.nextBtn.btn-lg.pull-right.disabled(type='button' style="margin-right: -10px !important;") Lanjut          
+             button.btn.btn-primary.nextBtn.btn-lg.pull-right.step2-button.disabled(type='button' style="margin-right: -10px !important;") Lanjut          
              button.btn.btn-primary.prevBtn.btn-lg.pull-right(type='button') Kembali
          #step-3.row.setup-content
           .col-xs-12

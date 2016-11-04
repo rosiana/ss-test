@@ -9,4 +9,4 @@ User who happens to forget filling required forms doesn't have to click submit/n
 No loading time to get to the next step.
 ### Responsive, also fine and tidy-looking on desktop
 The development of this page also considers desktop layout for Sistas who access the page via desktop. Style used in this page is flat design since it suits well with pages with a lot of texts and contents.
-### :)
+### :heart:
