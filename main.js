@@ -40,6 +40,7 @@ $(document).ready(function () {
                 $dot.removeClass('return');
             }
             $dot.addClass('change');
+            $curWizard.find('.bs-wizard-steptitle').css({"font-weight":"600"});
 
             $curWizard.find('.bs-wizard-steptitle').css({"font-weight":"600"});
 
