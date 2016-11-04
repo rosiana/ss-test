@@ -36,22 +36,22 @@ $(document).ready(function () {
             $target.find('input:eq(0)').focus();
             $dot = $('.bs-wizard-dot[href=\'' + $(this).attr('href') + '\']');
             $dot.css({"width": "35px", "height": "35px", "top":"40px"});
+            if ($dot.hasClass('return')) {
+                $dot.removeClass('return');
+            }
             $dot.addClass('change');
 
-            for(var i = 0; i < navListItems.length; i++) {
-                if($(($(navListItems.eq(i))).parent()).hasClass('complete')) {
-                    console.log("a");
-                    $dot1 = $('.bs-wizard-dot[href=\'' + $(navListItems.eq(i)).attr('href') + '\']');
-                    $dot1.css({"width": "21px", "height": "21px", "top":"45px"});
-                    $dot1.addClass('return');
-                }
-                else if ($(($(navListItems.eq(i))).parent()).hasClass('active') && !($(navListItems.eq(i)).is($item))) {
-                    console.log("b");
+            $curWizard.find('.bs-wizard-steptitle').css({"font-weight":"700"});
+
+            for(var i = 0; i < navListItems.length; i++) {                
+                if ($(($(navListItems.eq(i))).parent()).hasClass('active') && !($(navListItems.eq(i)).is($item))) {
                     $(($(navListItems.eq(i))).parent()).addClass('complete');
-                    $(($(navListItems.eq(i))).parent()).removeClass('active');
+                }
+                if($(($(navListItems.eq(i))).parent()).hasClass('complete') && !($(navListItems.eq(i)).is($item))) {
                     $dot1 = $('.bs-wizard-dot[href=\'' + $(navListItems.eq(i)).attr('href') + '\']');
                     $dot1.css({"width": "21px", "height": "21px", "top":"45px"});
                     $dot1.addClass('return');
+                    $curWizard.find('.bs-wizard-steptitle').css({"font-weight":"300"});
                 }
             }
 
