@@ -31,7 +31,8 @@ $(document).ready(function () {
             }
             else if ($target.is($('#step-4'))) {
                 $('.panel-subtitle').text('Done!');
-                $('.panel-body').css('background-color','white');
+                $('.panel-body').css('cssText', 'background-color: #fff !important');
+                $('.panel').removeClass('.panel-heading');
             }
             $target.find('input:eq(0)').focus();
             $dot = $('.bs-wizard-dot[href=\'' + $(this).attr('href') + '\']');
