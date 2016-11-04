@@ -45,6 +45,8 @@ $(document).ready(function () {
             $dot.addClass('change');
             $curWizard.find('.bs-wizard-steptitle').css({"font-weight":"600"});
 
+            $curWizard.find('.bs-wizard-steptitle').css({"font-weight":"600"});
+
             for(var i = 0; i < navListItems.length; i++) {                
                 if ($(($(navListItems.eq(i))).parent()).hasClass('active') && !($(navListItems.eq(i)).is($item))) {
                     $(($(navListItems.eq(i))).parent()).addClass('complete');
