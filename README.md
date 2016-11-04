@@ -1,4 +1,4 @@
-# Cashback Page (Mobile-First)
+# Refund Page (Mobile-First)
 Developed using **Harp** as **Node.js** static page generator containing integrated preprocessor (**Jade** for HTML and **Less** for CSS).
 Main features/interaction highlights listed below.
 ### Multi-steps form
