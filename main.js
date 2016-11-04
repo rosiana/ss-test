@@ -138,10 +138,10 @@ $(document).ready(function () {
         var toValidate = $('.name-input');
         toValidate.keyup(function() {            
             if($(this).val().length > 0) {
-                $('.nextBtn').removeClass('disabled');
+                $('.step1-button').removeClass('disabled');
             }
             else {
-                $('.nextBtn').addClass('disabled');
+                $('.step1-button').addClass('disabled');
             }
         });
 
@@ -149,11 +149,9 @@ $(document).ready(function () {
         toValidate.keyup(function() {            
             if($(this).val().length > 0) {
                 $('.order-button').removeClass('disabled');
-                $('.nextBtn').removeClass('disabled');
             }
             else {
                 $('.order-button').addClass('disabled');
-                $('.nextBtn').addClass('disabled');
             }
         });
 
@@ -163,14 +161,15 @@ $(document).ready(function () {
             $('.goods').show();
         });
 
-        function checkCheck() {         
-
-            if ($('#check1').prop("checked") == true || $('#check2').prop("checked") == true) {
-                $('.nextBtn').removeClass('disabled');
+        $('input[type="checkbox"]').change(function() {  
+            console.log("1"); 
+            if ($('#check1').is(':checked') || $('#check2').is(':checked')) {
+                console.log("2"); 
+                $('.step2-button').removeClass('disabled');
             }
             else {
-                $('.nextBtn').addClass('disabled');
+                console.log("3"); 
+                $('.step2-button').addClass('disabled');
             }
-        };
-        checkCheck();
+        });
 });
