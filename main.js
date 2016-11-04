@@ -30,9 +30,11 @@ $(document).ready(function () {
                 $('.panel-subtitle').text('Silakan lengkapi data pengembalian barang');
             }
             else if ($target.is($('#step-4'))) {
-                $('.panel-subtitle').text('Done!');
                 $('.panel-body').css('cssText', 'background-color: #fff !important');
-                $('.panel').removeClass('.panel-heading');
+                $('.panel-subtitle').html('Terima kasih, laporan pengembalian barang Sista sudah kami terima.<br><i>Cashback</i> akan Soraya berikan dalam bentuk <i>voucher</i> belanja ke email dan nomor HP Sista. :)');
+                $('.panel-subtitle').css('cssText', 'text-align: center !important');
+                $('.panel-heading').find('h3').text('Done!');
+                $('.panel-heading').find('h3').css('cssText', 'text-align: center !important');
             }
             $target.find('input:eq(0)').focus();
             $dot = $('.bs-wizard-dot[href=\'' + $(this).attr('href') + '\']');
