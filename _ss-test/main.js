@@ -14,17 +14,17 @@ $(document).ready(function () {
                 $curWizard = $($(this).parent());
 
         if (!$curWizard.hasClass('disabled')) {
-            if ($curWizard.hasClass('complete')) {
+            /*if ($curWizard.hasClass('complete')) {
                 $curWizard.removeClass('complete');
             }
-            $curWizard.addClass('active');
+            $curWizard.addClass('active');*/
             allWells.hide();
             $target.show();
             if ($target.is($('#step-1'))) {
                 $('.panel-subtitle').text('Isi data Sista dulu ya');
             }
             else if ($target.is($('#step-2'))) {
-                $('.panel-subtitle').text('Silakan pilih barang yang ingin Sista kembalikan');
+                $('.panel-subtitle').text('Silakan masukkan nomor order dan pilih barang yang ingin Sista kembalikan');
             }
             else if ($target.is($('#step-3'))) {
                 $('.panel-subtitle').text('Silakan lengkapi data pengembalian barang');
@@ -41,6 +41,14 @@ $(document).ready(function () {
             for(var i = 0; i < navListItems.length; i++) {
                 if($(($(navListItems.eq(i))).parent()).hasClass('complete')) {
                     console.log("a");
+                    $dot1 = $('.bs-wizard-dot[href=\'' + $(navListItems.eq(i)).attr('href') + '\']');
+                    $dot1.css({"width": "21px", "height": "21px", "top":"45px"});
+                    $dot1.addClass('return');
+                }
+                else if ($(($(navListItems.eq(i))).parent()).hasClass('active') && !($(navListItems.eq(i)).is($item))) {
+                    console.log("b");
+                    $(($(navListItems.eq(i))).parent()).addClass('complete');
+                    $(($(navListItems.eq(i))).parent()).removeClass('active');
                     $dot1 = $('.bs-wizard-dot[href=\'' + $(navListItems.eq(i)).attr('href') + '\']');
                     $dot1.css({"width": "21px", "height": "21px", "top":"45px"});
                     $dot1.addClass('return');
