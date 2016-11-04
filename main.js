@@ -138,7 +138,7 @@ $(document).ready(function () {
         allImgInp.change(function(){
             var id = $(this).attr('id');
             readURL(this, id);
-
+            $('#btnFile-' + id).text('Ganti Foto');
         });  
 
         var toValidate = $('.name-input');
