@@ -10,15 +10,14 @@ $(document).ready(function () {
     navListItems.click(function (e) {
         e.preventDefault();
         var $target = $($(this).attr('href')),
-                $item = $(this);
+                $item = $(this),
+                $curWizard = $($(this).parent());
 
-        if (!$item.hasClass('disabled')) {
-            if ($item.hasClass('complete')) {
-                navListItems.removeClass('complete');
-                $item.removeClass('complete');
+        if (!$curWizard.hasClass('disabled')) {
+            if ($curWizard.hasClass('complete')) {
+                $curWizard.removeClass('complete');
             }
-            navListItems.addClass('active');
-            $item.addClass('active');
+            $curWizard.addClass('active');
             allWells.hide();
             $target.show();
             if ($target.is($('#step-1'))) {
@@ -37,8 +36,18 @@ $(document).ready(function () {
             $target.find('input:eq(0)').focus();
             $dot = $('.bs-wizard-dot[href=\'' + $(this).attr('href') + '\']');
             $dot.css({"width": "35px", "height": "35px", "top":"40px"});
-            $dot.toggleClass('change');
+            $dot.addClass('change');
 
+            for(var i = 0; i < navListItems.length; i++) {
+                if($(($(navListItems.eq(i))).parent()).hasClass('complete')) {
+                    console.log("a");
+                    $dot1 = $('.bs-wizard-dot[href=\'' + $(navListItems.eq(i)).attr('href') + '\']');
+                    $dot1.css({"width": "21px", "height": "21px", "top":"45px"});
+                    $dot1.addClass('return');
+                }
+            }
+
+            console.log($(navListItems.parent()));
         };
     });
 
@@ -145,7 +154,6 @@ $(document).ready(function () {
         function checkCheck() {         
 
             if ($('#check1').prop("checked") == true || $('#check2').prop("checked") == true) {
-                console.log("nyo");
                 $('.nextBtn').removeClass('disabled');
             }
             else {
