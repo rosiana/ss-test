@@ -2,7 +2,7 @@
 Developed using **Harp** as **Node.js** static page generator containing integrated preprocessor (**Jade** for HTML and **Less** for CSS).
 Main features/interaction highlights listed below.
 ### Multi-steps form
-This method simplifies many form elements to be shown at once (since mobile screens are limited in size) and divides form-filling flow into different sections by its information types.
+This method simplifies many form elements to be shown at once (since mobile screens are limited in size) and divides form-filling flow into different sections by its information types. User can easily go back to previous step and return by clicking on navigation buttons or step wizard circles.
 ### Minimize errors and unnecessary interactions
 User who happens to forget filling required forms doesn't have to click submit/next buttons once again only to get rid of error messages and continue, since submit/next buttons are disabled until all required data provided.
 ### Single-page web app
